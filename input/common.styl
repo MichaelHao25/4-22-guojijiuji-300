@@ -1,0 +1,223 @@
+@import url(reset.css)
+
+body
+	background #000
+.header
+	position fixed
+	top 0
+	left 0
+	right 0
+	background rgba(0,0,0,0.5)
+	z-index 10
+	.toggle-menu
+		position relative
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		align-items center
+		float left
+		height 120px
+		padding-right 30px
+		cursor pointer
+		z-index 12
+		@media(max-width 768px)
+			height 70px
+		span
+			position relative
+			width 40px
+			height 2px
+			background #c7b374
+			transition 0.3s
+			&.active
+				background rgba(0,0,0,0)
+				&:after
+					top 0
+					transform rotate(45deg)
+					transition top 0.3s,bottom 0.3s ,transform 0.3s 0.3s
+				&:before
+					bottom 0
+					transform rotate(-45deg)
+					transition top 0.3s,bottom 0.3s ,transform 0.3s 0.3s
+			@media(max-width 768px)
+				width 25px
+			&:after
+				content ""
+				position absolute
+				top -15px
+				left 0
+				right 0
+				border-top 2px solid #c7b374
+				transition top 0.3s 0.3s,bottom 0.3s 0.3s ,transform 0.3s
+				@media(max-width 768px)
+					top -10px
+			&:before
+				content ""
+				position absolute
+				bottom -15px
+				left 0
+				right 0
+				border-top 2px solid #c7b374
+				transition top 0.3s 0.3s,bottom 0.3s 0.3s ,transform 0.3s
+				@media(max-width 768px)
+					bottom -10px
+	.brand
+		float left
+		width 300px
+		height 120px
+		background url() left center/auto 60%  no-repeat
+		@media(max-width 768px)
+			height 70px
+	.menu
+		position fixed
+		top 0
+		bottom 0
+		left 50%
+		margin-left -585px
+		padding-right 30px
+		padding-left 2px
+		max-width 270px
+		width 100%
+		background #000
+		z-index 11
+		padding-top 120px
+		transition 0.3s
+		@media(max-width 1200px)
+			margin-left -485px
+		@media(max-width 992px)
+			margin-left -375px
+		@media(max-width 768px)
+			padding-top 70px
+			padding-left 15px
+			margin-left 0
+			left 0
+			transform translateX(0)
+		&.active
+			left 0
+			@media(max-width 768px)
+				transform translateX(-100%)
+		&:after
+			content ""
+			position absolute
+			left 2px
+			top 0
+			bottom 0
+			width 50vw
+			background #000
+			transform translateX(-100%)
+		h3
+			position relative
+			&.active
+				a
+					&:after
+						background-image url('../img/arrow-down.png')
+			&.no-menu
+				a
+					&:after
+						display none
+			&:hover
+				a
+					color #675d3d
+					&:after
+						opacity 0.5
+			a
+				display block
+				padding 14px 14px 14px 0
+				color #c7b374
+				transition 0.3s
+				&:after
+					content ""
+					position absolute
+					right 0
+					top 50%
+					bottom 0
+					width 7px
+					height 7px
+					margin-top -3.5px
+					background url('../img/arrow-right.png') center center no-repeat
+					transition 0.3s
+				
+		.wrap+.wrap
+			border-top 1px solid #867353
+		.nav
+			margin-bottom 40px
+			display none
+			a
+				display block
+				padding 14px 14px 14px 0
+				color #675d3d
+				transition 0.3s
+				&:hover
+					color #c7b374
+		
+.main
+	.banner
+		img
+			max-width 1920px
+			width 100%
+			display block
+			margin 0 auto
+	.list
+		padding-bottom 100px
+		h2
+			padding 30px 0
+			font-size 40px
+			color #232323
+			line-height 60px
+			text-align center
+		.pic
+			display block
+			width 100%
+			margin-bottom 10px
+			img
+				display block
+				width 100%
+		h3
+		p
+			font-size 12px
+			color #000
+			line-height 2
+			text-align center
+		.more
+			display block
+			width 90px
+			height 30px
+			margin 10px auto 0
+			font-size 12px
+			color #000
+			line-height 30px
+			text-align center
+			border-radius 5px
+			border 1px solid #000
+		.swiper-button-disabled
+			opacity 0
+		
+			
+.footer
+	position relative
+	font-size 12px
+	color #b7a46a
+	text-align center
+	line-height 22px
+	background #000
+	.line
+		border-bottom 1px solid #3f331e
+	h3
+		margin-top 30px
+		font-size 14px
+		color #e9cd76
+		font-weight bold
+	.nav
+		margin-bottom 40px
+		a
+			display block
+	.copy-right
+		padding-top 10px
+		a
+			padding 0 5px
+	.goto-top
+		position absolute
+		top -20px
+		left 50%
+		transform translateX(-50%)
